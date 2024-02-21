@@ -30,8 +30,8 @@ include_once "./api/db.php";
 		</div>
 		<div id="mm">
 			<div class="hal" id="lef">
-				<a class="blo" href="index.php">回首頁</a>
-				<a class="blo" href="?do=news">最新文章</a>
+				<a class="blo" href="?do=admin">帳號管理</a>
+				<a class="blo" href="?do=news">最新文章管理</a>
 				<a class="blo" href="?do=que">問卷調查</a>
 			</div>
 			<div class="hal" id="main">
@@ -61,11 +61,11 @@ include_once "./api/db.php";
 					<div class="">
 						<?php
 						$do = $_GET['do'] ?? 'main';
-						$file = "./front/{$do}.php";
+						$file = "./back/{$do}.php";
 						if (file_exists($file)) {
 							include $file;
 						} else {
-							include "./front/main.php";
+							include "./back/main.php";
 						}
 						?>
 					</div>
